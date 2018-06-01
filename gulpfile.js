@@ -12,7 +12,7 @@ gulp.task('hello',()=>{
 
 gulp.task('sass',()=>{
   return gulp.src('app/scss/*.scss')
-             .pipe(sourcemaps.init())
+             .pipe(sourcemaps.init({largeFile: true}))
              .pipe(sass().on('error',sass.logError))
              .pipe(sourcemaps.write())
              .pipe(gulp.dest('app/css'))
@@ -35,7 +35,8 @@ gulp.task('browserSync',()=>{
 
 gulp.task('serve', ()=>{
   browserSync.init({
-    server: 'app'
+    server: 'app',
+    notify: false,
   });
   gulp.watch('app/scss/*.scss',gulp.series('sass'));
   gulp.watch("app/*.html").on('change', browserSync.reload);

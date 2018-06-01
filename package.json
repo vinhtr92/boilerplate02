@@ -10,12 +10,13 @@
   "author": "vinh",
   "license": "ISC",
   "devDependencies": {
+    "bootstrap": "^4.1.1",
     "browser-sync": "^2.24.4",
-    "browsersync": "0.0.1-security",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-purifycss": "^0.2.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4"
-  }
+  },
+  "dependencies": {}
 }
