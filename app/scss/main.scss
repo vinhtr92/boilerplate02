@@ -1,1 +1,120 @@
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "./vendor/fontawesome/fontawesome.scss";
+@import "./vendor/fontawesome/fa-solid.scss";
+@import "./vendor/fontawesome/fa-brands.scss";
+@import "./vendor/fontawesome/fa-regular.scss";
+
+
+
+
+/* Helper */
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.row-no-padding {
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.box {
+  display: inline-block;
+  &__image img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  &__test {
+    word-wrap: none;
+  }
+
+  ul {
+    margin: 0;
+    padding:0 ;
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+
+.box__social {
+  li {
+    float: left;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  a::before  {
+    font-family: 'Font Awesome 5 Brands';
+  }
+
+  a[href*="facebook"] {
+    &::before {
+      content: '\f39e';
+    }
+  }
+
+  a[href*="google"] {
+    &::before {
+      content: '\f0d5';
+    }
+  }
+
+  a[href*="twitter"] {
+    &::before {
+      content: '\f099';
+    }
+  }
+
+  a[href*="linkedin"] {
+    &::before {
+      content: '\f0e1';
+    }
+  }
+
+  a[href*="behance"] {
+    &::before {
+      content: '\f1b4';
+    }
+  }
+}
+
+.box__contact {
+  a::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+
+  a[href*="tel"] {
+    &::before {
+      content: '\f095';
+    }
+  }
+
+  a[href*="mailto"] {
+    &::before {
+      content: '\f0e0';
+    }
+  }
+
+  a[href*="google.com/map"] {
+    &::before {
+      content: '\f3c5';
+    }
+  }
+}
+
