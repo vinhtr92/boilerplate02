@@ -1,14 +1,23 @@
+
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
 const purify = require('gulp-purifycss');
+const postcss = require('gulp-postcss');
+const uncss = require('gulp-uncss');
 
 
 gulp.task('hello',()=>{
   console.log('hello vinh');
 })
+
+/* gulp.task('css', function () {
+  return gulp.src('./src/*.css')
+      .pipe(postcss())
+      .pipe(gulp.dest('./dest'));
+}); */
 
 gulp.task('sass',()=>{
   return gulp.src('app/scss/*.scss')
@@ -20,6 +29,17 @@ gulp.task('sass',()=>{
 
 });
 
+/* gulp.task('css', function () {
+  var postcss    = require('gulp-postcss');
+  var sourcemaps = require('gulp-sourcemaps');
+
+  return gulp.src('./app/css/main.css')
+      .pipe( sourcemaps.init() )
+      .pipe( postcss([ require('precss'), require('autoprefixer') ]) )
+      .pipe( sourcemaps.write('.') )
+      .pipe(gulp.dest('./dist/css'));
+});
+ */
 
 /* gulp.task('watch',()=>{
   gulp.watch('app/scss/*.scss',gulp.series('sass'));
