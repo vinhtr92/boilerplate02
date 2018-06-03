@@ -32,6 +32,7 @@ $header-color: #333;
 $main-color: #ffc20a;
 $light-bg : $white;
 $dots-color: #ccc;
+$gradient--style: linear-gradient(to top,$gray-300,$white);
 
 /* Helper */
 .no-gutters {
@@ -120,9 +121,25 @@ body {
 .box--style03 {
   text-align: center;
 
+  a.overlay {
+    display: block;
+    text-decoration: none;
+
+    &:hover {
+      .bg-overlay {
+        opacity: 1;
+        transition: .3s all;
+      }
+    }
+  }
+
   .box__image {
     position: relative;
     margin-bottom: em(25px);
+
+    > img {
+        width: 100%;
+    }
   }
 
   .bg-overlay {
@@ -146,19 +163,17 @@ body {
       transform: translate(-50%, -50%);
     }
   }
-}
 
-/* overlay hover effect on box--style03 */
-a.overlay {
-  display: block;
-
-  &:hover {
-    .bg-overlay {
-      opacity: 1;
-      transition: .3s all;
+  @include media-breakpoint-up(md){
+    .box__image > img {
+      height: rem(180px);
+      width: auto;
     }
   }
 }
+
+/* overlay hover effect on box--style03 */
+
 
 
 .box--style04 {
@@ -204,7 +219,6 @@ a.overlay {
 
   h3 {
     font-size: rem(15px);
-    font-family: 'Raleway';
     font-weight: bold;
     text-transform: capitalize;
     order: 1;
@@ -216,7 +230,6 @@ a.overlay {
 
   p {
     font-size: rem(15px);
-    font-family: 'Source Sans Pro';
   }
 
   &::before {
@@ -241,7 +254,75 @@ a.overlay {
       margin-bottom: 10px;
     }
   }
+}
 
+.box--style06 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  .box__image {
+    position: relative;
+  }
+
+  .box__social {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .3s all;
+    width: rem(280px);
+  }
+
+  .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($main-color,0.8);
+    opacity: 0;
+    transition: .3s all;
+  }
+
+  .box__content {
+    // border: 1px solid;
+  }
+
+  h3 {
+    margin-top: rem(25px);
+  }
+
+  p {
+    margin-bottom: rem(20px);
+  }
+
+  a.refer {
+    text-decoration: none;
+  }
+
+  &:hover {
+    .box__social,
+    .bg-overlay {
+      opacity: 1;
+      transition: .3s all;
+    }
+
+    .box__social {
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .box__image {
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        padding-top: rem(20px);
+      }
+    }
+
+  }
 }
 
 .process {
@@ -259,11 +340,12 @@ a.overlay {
   background-size: cover;
   position: relative;
   height: auto;
+  overflow: hidden;
+
   .bg-slider {
     img {
       height: rem(350px);
       object-fit: cover;
-
     }
   }
 
@@ -271,9 +353,8 @@ a.overlay {
     background-color: rgba($black,0);
   }
 
-  .slider-container {
-    background-color: $light-bg;
-    padding: em(50px) 0;
+  p {
+    line-height: initial;
   }
 
   @include media-breakpoint-up(md) {
@@ -281,6 +362,7 @@ a.overlay {
 
     .slider-container {
       margin-top: rem(80px);
+      background: $gradient--style;
     }
 
     .testimonial-bg {
@@ -301,23 +383,33 @@ a.overlay {
 
   @include media-breakpoint-up(xl) {
     height : rem(540px);
-    .slider-container {
-      margin-top: rem(100px);
-    }
 
+      .slider-container {
+        margin-top: rem(100px);
+      }
 
+      .box__content {
+        padding: 0 em(26px);
+      }
+
+      p {
+        line-height: 1.2;
+        margin-bottom: rem(40px);
+      }
     }
   }
 
-  .testimonial-bg {
-
+.slider-container {
+  background-color: $light-bg;
+  padding: em(50px) 0;
+  border-radius: 3px ;
 }
 
 .testimonial-slider {
   .slick-dots {
     display: flex;
     justify-content: center;
-    bottom: -60px;
+    bottom: -50px;
 
     margin: 0;
     padding: 1rem 0;
@@ -330,8 +422,8 @@ a.overlay {
 
     button {
 			display: block;
-			width: rem(8px);
-			height: rem(8px);
+			width: rem(10px);
+			height: rem(10px);
 			padding: 0;
 
 			border: none;
@@ -345,19 +437,28 @@ a.overlay {
 			background-color:$main-color;
 		}
   }
+
+  @include media-breakpoint-up(xl){
+    .slick-dots {
+      bottom: -70px;
+    }
+  }
 }
 
 .box__social {
+
   li {
-    float: left;
+    display: inline-block;
+    margin: 0 12px;
   }
 
   a {
-    display: inline-block;
+    // display: inline-block;
   }
 
   a::before  {
     font-family: 'Font Awesome 5 Brands';
+    font-weight: bold;
   }
 
   a[href*="facebook"] {
