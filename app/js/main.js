@@ -1,6 +1,15 @@
 $(document).ready(function(){
-  $(document).on("click", '[data-toggle="lightbox"]', function(event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
+  console.log('ready');
+
+  $('.testimonial-slider').slick({
+    dots: true,
+    nextArrow: null,
+    prevArrow: null,
+    asNavFor: '.bg-slider',
   });
+
+  $('.bg-slider').slick({
+    autoplay:false,
+    asNavFor: '.testimonial-slider',
+  })
 })

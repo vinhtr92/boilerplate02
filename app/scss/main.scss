@@ -3,6 +3,8 @@
 @import "./vendor/fontawesome/fa-solid.scss";
 @import "./vendor/fontawesome/fa-brands.scss";
 @import "./vendor/fontawesome/fa-regular.scss";
+@import "./vendor/slick/slick-theme.scss";
+@import "./vendor/slick/slick.scss";
 
 /* function */
 
@@ -22,9 +24,14 @@
 
 
 /* variables */
+// $fa-font-path: "../fonts/fontawesome";
+
+
 $text-color: #666;
 $header-color: #333;
 $main-color: #ffc20a;
+$light-bg : $white;
+$dots-color: #ccc;
 
 /* Helper */
 .no-gutters {
@@ -90,6 +97,11 @@ body {
     font-size: rem(14px);
     color: $text-color;
   }
+
+  &::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight:  900;
+  }
 }
 
 .box--style02 {
@@ -106,25 +118,14 @@ body {
 }
 
 .box--style03 {
-  .box__image {
-    margin-bottom: em(25px);
-  }
-
   text-align: center;
-  &:hover {
-    cursor: pointer;
-
-    a.overlay{
-      opacity: 1;
-      transition: .3s all;
-    }
-  }
 
   .box__image {
     position: relative;
+    margin-bottom: em(25px);
   }
 
-  a.overlay {
+  .bg-overlay {
     opacity: 0;
     position: absolute;
     top:0;
@@ -135,25 +136,36 @@ body {
     background: rgba($black,0.6);
     transition: .3s all;
     color: $white;
-  }
 
-  .overlay::before {
-    content: '\002b';
-    opacity: 1;
-
-    position: absolute;
-    font-size: rem(40px);
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    &::before {
+      content: '\002b';
+      position: absolute;
+      font-size: rem(40px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 
+/* overlay hover effect on box--style03 */
+a.overlay {
+  display: block;
+
+  &:hover {
+    .bg-overlay {
+      opacity: 1;
+      transition: .3s all;
+    }
+  }
+}
+
+
 .box--style04 {
   text-align: left;
-  & .box__image {
+  .box__image {
     float: left;
-    margin-right: 25px;
+    margin-right: 15px;
 
     img {
       width: rem(60px);
@@ -173,6 +185,63 @@ body {
     font-family: 'Source Sans Pro';
     color: $main-color;
   }
+
+  @include media-breakpoint-up(sm) {
+    .box__image {
+      margin-right: 25px;
+    }
+  }
+}
+
+.box--style05 {
+   text-align: center;
+
+  .box__content {
+    display:flex;
+    flex-direction:column;
+    position: relative;
+  }
+
+  h3 {
+    font-size: rem(15px);
+    font-family: 'Raleway';
+    font-weight: bold;
+    text-transform: capitalize;
+    order: 1;
+
+    > span {
+      font-weight: normal;
+    }
+  }
+
+  p {
+    font-size: rem(15px);
+    font-family: 'Source Sans Pro';
+  }
+
+  &::before {
+    content: '\f10d';
+    color: $main-color;
+    font-size: rem(30px);
+    margin-bottom: initial;
+    display: block;
+  }
+
+  @include media-breakpoint-up(lg){
+
+
+    p {
+      font-size: rem(18px);
+    }
+  }
+
+  @include media-breakpoint-up(xl){
+    &::before {
+      font-size: rem(40px);
+      margin-bottom: 10px;
+    }
+  }
+
 }
 
 .process {
@@ -186,7 +255,97 @@ body {
   }
 }
 
+.testimonial {
+  background-size: cover;
+  position: relative;
+  height: auto;
+  .bg-slider {
+    img {
+      height: rem(350px);
+      object-fit: cover;
 
+    }
+  }
+
+  .testimonial-bg {
+    background-color: rgba($black,0);
+  }
+
+  .slider-container {
+    background-color: $light-bg;
+    padding: em(50px) 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: auto;
+
+    .slider-container {
+      margin-top: rem(80px);
+    }
+
+    .testimonial-bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba($black,0.3);
+    }
+
+    .bg-slider {
+      img {
+        height: auto;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    height : rem(540px);
+    .slider-container {
+      margin-top: rem(100px);
+    }
+
+
+    }
+  }
+
+  .testimonial-bg {
+
+}
+
+.testimonial-slider {
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    bottom: -60px;
+
+    margin: 0;
+    padding: 1rem 0;
+
+    list-style-type: none;
+
+    li {
+			margin: 0 rem(2px);
+    }
+
+    button {
+			display: block;
+			width: rem(8px);
+			height: rem(8px);
+			padding: 0;
+
+			border: none;
+      border-radius: 100%;
+      background-color: $dots-color;
+
+			text-indent: -9999px;
+		}
+
+		li.slick-active button {
+			background-color:$main-color;
+		}
+  }
+}
 
 .box__social {
   li {
@@ -256,4 +415,6 @@ body {
     }
   }
 }
+
+
 
