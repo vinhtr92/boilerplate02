@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/lightbox.css">
   <link rel="stylesheet" href="./css/main.css">
 <!--   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> -->
 
@@ -42,7 +43,7 @@
       <div class="container">
         <div class="row">
           <div class="col-6">
-            <img src="./image/logo.png" alt="" class="logo img-fluid">
+            <img src="./images/logo.png" alt="" class="logo img-fluid">
           </div>
           <div class="col-6">
             <button class="toggle-menu"><i class="fas fa-bars"></i></button>
@@ -64,27 +65,29 @@
 
 
   <section class="hero">
-    <!-- TODO: làm slidershow -->
-    <div class="container-fluid ">
-    	<div class="row row-no-padding">
-    		<div class="col-12">
-          <div class="content">
-            <h3 class="content__title">Building a Disaster Resistant Home!</h3>
-            <p class="content__desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem ipsa voluptatum laborum blanditiis.
-            </p>
-            <div class="content__btn btn-construct btn-lg">
-              <!-- TODO: làm style btn btn-construct btn-lg -->
-              <a href="#" class="btn btn-construct btn-lg"> contact us</a><a href="#" class="btn btn-construct btn-lg">learn more</a>
-            </div>
-          </div>
-    			<div class="slider">
-    			  <div class="slider__item"><img src="./image/slide/01.jpg" alt="slider" style="width: 100%"></div>
-    			  <div class="slider__item"><img src="./image/slide/02.jpg" alt="slider" style="width: 100%"></div>
-    			</div>
-    		</div>
-    	</div>
+    <div class="box">
+      <div class="box__image">
+        <img src="./images/bigicon/home.png" alt="">
+      </div>
+      <div class="box__content">
+        <h3>
+            Building a Disaster Resistant Home!
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget urna justo. Nunc interdum eros condimentum euismod tincidunt. Maecenas auctor lacus quis ultrices sagittis sit amet diam et velit ultricies placerat.
+        </p>
+      </div>
     </div>
+
+    <div class="group-btn">
+      <a href="#" class="btn btn-lg btn-construct">
+        contact us
+      </a>
+      <a href="" class="btn btn-lg btn-outline-light">
+        learn more
+      </a>
+    </div>
+    <div class="bg-overlay"></div>
   </section>
 
 
@@ -95,7 +98,7 @@
           <!-- TODO:Style box 02 -->
           <div class="box box--style02">
             <div class="box__image">
-              <img src="./image/bigicon/light-bulb.svg
+              <img src="./images/bigicon/light-bulb.svg
               " alt="idea">
             </div>
             <div class="box__content">
@@ -120,7 +123,7 @@
             <div class="box box--style03">
               <a href="#" class="overlay">
                 <div class="box__image">
-                  <img src='./image/services/ (3).png' alt=''/>
+                  <img src='./images/services/ (3).png' alt=''/>
                   <div class="bg-overlay" ></div>
                 </div>
                 <div class="box__content">
@@ -135,7 +138,7 @@
           <div class="box box--style03">
             <a href="#" class="overlay">
               <div class="box__image">
-                <img src='./image/services/ (1).jpg' alt=''/>
+                <img src='./images/services/ (1).jpg' alt=''/>
                 <div class="bg-overlay" ></div>
               </div>
               <div class="box__content">
@@ -149,7 +152,7 @@
           <div class="box box--style03">
           <a href="#" class="overlay">
               <div class="box__image">
-                <img src='./image/services/ (7).png' alt=''/>
+                <img src='./images/services/ (7).png' alt=''/>
                 <div class="bg-overlay" ></div>
               </div>
               <div class="box__content">
@@ -164,7 +167,7 @@
           <div class="box box--style03">
             <a href="#" class="overlay">
               <div class="box__image">
-                <img src='./image/services/ (8).png' alt='' />
+                <img src='./images/services/ (8).png' alt='' />
                 <div class="bg-overlay"></div>
               </div>
               <div class="box__content">
@@ -187,6 +190,105 @@
     <h2 class="main-title">
       our success
     </h2>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-4">
+          <div class="box box--style11">
+
+            <a href="./images/project/main01.jpg" class ="refer" data-lightbox="image-1" data-title="The Sharp Building">
+
+            <div class="box__image">
+                <img src="./images/project/01.jpg" alt="">
+              <div class="bg-overlay"></div>
+
+            </div>
+            <div class="box__content">
+              <h3>The Sharp Building</h3>
+              <p>
+                  Building, Education
+              </p>
+            </div>
+          </a>
+          </div>
+
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-4">
+          <div class="box box--style11 mb-4">
+
+            <a href="./images/project/main02.jpg" class ="refer" data-lightbox="image-2" data-title="The Sharp Building">
+
+            <div class="box__image">
+                <img src="./images/project/02.jpg" alt="">
+              <div class="bg-overlay"></div>
+
+            </div>
+            <div class="box__content">
+              <h3>The Sharp Building</h3>
+              <p>
+                  Building, Education
+              </p>
+            </div>
+          </a>
+          </div>
+
+          <div class="box box--style11">
+
+              <a href="./images/project/main03.jpg" class ="refer" data-lightbox="image-3" data-title="The Sharp Building">
+
+              <div class="box__image">
+                  <img src="./images/project/03.jpg" alt="">
+                <div class="bg-overlay"></div>
+
+              </div>
+              <div class="box__content">
+                <h3>The Sharp Building</h3>
+                <p>
+                    Building, Education
+                </p>
+              </div>
+            </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-4">
+          <div class="box box--style11 mb-4">
+
+            <a href="./images/project/main04.jpg" class ="refer" data-lightbox="image-1" data-title="The Sharp Building">
+
+            <div class="box__image">
+                <img src="./images/project/04.jpg" alt="">
+              <div class="bg-overlay"></div>
+
+            </div>
+            <div class="box__content">
+              <h3>The Sharp Building</h3>
+              <p>
+                  Building, Education
+              </p>
+            </div>
+          </a>
+          </div>
+
+          <div class="box box--style11">
+
+              <a href="./images/project/main05.jpg" class ="refer" data-lightbox="image-1" data-title="The Sharp Building">
+
+              <div class="box__image">
+                  <img src="./images/project/05.jpg" alt="">
+                <div class="bg-overlay"></div>
+
+              </div>
+              <div class="box__content">
+                <h3>The Sharp Building</h3>
+                <p>
+                    Building, Education
+                </p>
+              </div>
+            </a>
+            </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 
@@ -199,7 +301,7 @@
         <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
           <div class="box box--style04">
             <div class="box__image">
-              <img src='./image/bigicon/engineer.png' alt=''/>
+              <img src='./images/bigicon/engineer.png' alt=''/>
             </div>
             <div class="box__content">
               <h3>Planning</h3>
@@ -210,7 +312,7 @@
         <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
           <div class="box box--style04">
             <div class="box__image">
-              <img src='./image/bigicon/blueprint.png' alt=''/>
+              <img src='./images/bigicon/blueprint.png' alt=''/>
             </div>
             <div class="box__content">
               <h3>architecture</h3>
@@ -221,7 +323,7 @@
         <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
           <div class="box box--style04">
             <div class="box__image">
-              <img src='./image/bigicon/crane.png' alt=''/>
+              <img src='./images/bigicon/crane.png' alt=''/>
             </div>
             <div class="box__content">
               <h3>Construction</h3>
@@ -232,7 +334,7 @@
         <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
           <div class="box box--style04">
             <div class="box__image">
-              <img src='./image/bigicon/idea.png' alt=''/>
+              <img src='./images/bigicon/idea.png' alt=''/>
             </div>
             <div class="box__content">
               <h3>Testing</h3>
@@ -248,7 +350,7 @@
     <!-- TODO: background-image cho test -->
     <div class="bg-slider">
       <div class="bg-item">
-        <img src='./image/background/testimonial.png' alt=''/>
+        <img src='./images/background/testimonial.png' alt=''/>
       </div>
       <div class="bg-item">
           <img src='https://picsum.photos/1920/539.jpg' alt=''/>
@@ -318,7 +420,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box box--style06">
               <div class="box__image">
-                  <img src='./image/team/man.png' alt=''/>
+                  <img src='./images/team/man.png' alt=''/>
                    <div class="bg-overlay"></div>
                   <div class="box__social">
                     <ul>
@@ -346,7 +448,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
             <div class="box box--style06">
                 <div class="box__image">
-                    <img src='./image/team/woman.png' alt=''/>
+                    <img src='./images/team/woman.png' alt=''/>
                     <div class="bg-overlay"></div>
 
                     <div class="box__social">
@@ -374,7 +476,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
             <div class="box box--style06">
                 <div class="box__image">
-                    <img src='./image/team/worker.png' alt=''/>
+                    <img src='./images/team/worker.png' alt=''/>
                     <div class="bg-overlay"></div>
                     <div class="box__social">
                       <ul>
@@ -406,11 +508,13 @@
   </section>
 
 
-  <section class="CTA text-center">
+  <section class="cta text-center">
     <div class="box box--style07">
       <div class="box__content">
         <h3>We Are Having A Project For You!</h3>
       </div>
+    </div>
+    <div class="bg-overlay">
     </div>
   </br>
 
@@ -426,7 +530,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box box--style08">
             <div class="box__image">
-              <img src='./image/news/01.jpg' alt=''/>
+              <img src='./images/news/01.jpg' alt=''/>
               <div class="box__date">
                 <div class="month">june</div>
                 <div class="date">26</div>
@@ -442,7 +546,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box box--style08">
             <div class="box__image">
-              <img src='./image/news/02.jpg' alt=''/>
+              <img src='./images/news/02.jpg' alt=''/>
               <div class="box__date">
                 <div class="month">june</div>
                 <div class="date">26</div>
@@ -458,7 +562,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="box box--style08">
             <div class="box__image">
-              <img src='./image/news/03.jpg' alt=''/>
+              <img src='./images/news/03.jpg' alt=''/>
               <div class="box__date">
                 <div class="month">june</div>
                 <div class="date">26</div>
@@ -483,22 +587,14 @@
             <div class="box">
               <div class="box__image">
                 <a href="#" class="refer">
-                  <img src="./image/partner/01.png" alt="">
+                  <img src="./images/partner/01.png" alt="">
                 </a>
               </div>
             </div>
             <div class="box">
               <div class="box__image">
                 <a href="#" class="refer">
-                  <img src="./image/partner/02.png" alt="">
-                </a>
-              </div>
-            </div>
-
-            <div class="box">
-              <div class="box__image">
-                <a href="#" class="refer">
-                  <img src="./image/partner/03.png" alt="">
+                  <img src="./images/partner/02.png" alt="">
                 </a>
               </div>
             </div>
@@ -506,14 +602,7 @@
             <div class="box">
               <div class="box__image">
                 <a href="#" class="refer">
-                  <img src="./image/partner/04.png" alt="">
-                </a>
-              </div>
-            </div>
-            <div class="box">
-              <div class="box__image">
-                <a href="#" class="refer">
-                  <img src="./image/partner/05.png" alt="">
+                  <img src="./images/partner/03.png" alt="">
                 </a>
               </div>
             </div>
@@ -521,14 +610,14 @@
             <div class="box">
               <div class="box__image">
                 <a href="#" class="refer">
-                  <img src="./image/partner/06.png" alt="">
+                  <img src="./images/partner/04.png" alt="">
                 </a>
               </div>
             </div>
             <div class="box">
               <div class="box__image">
                 <a href="#" class="refer">
-                  <img src="./image/partner/07.png" alt="">
+                  <img src="./images/partner/05.png" alt="">
                 </a>
               </div>
             </div>
@@ -536,7 +625,22 @@
             <div class="box">
               <div class="box__image">
                 <a href="#" class="refer">
-                  <img src="./image/partner/08.png" alt="">
+                  <img src="./images/partner/06.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="box">
+              <div class="box__image">
+                <a href="#" class="refer">
+                  <img src="./images/partner/07.png" alt="">
+                </a>
+              </div>
+            </div>
+
+            <div class="box">
+              <div class="box__image">
+                <a href="#" class="refer">
+                  <img src="./images/partner/08.png" alt="">
                 </a>
               </div>
             </div>
@@ -556,7 +660,7 @@
         <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
           <div class="box box--style09">
             <div class="box__image">
-              <img src="./image/logo.png" alt="logo">
+              <img src="./images/logo.png" alt="logo">
             </div>
             <div class="box__content">
                 <p>
@@ -633,6 +737,7 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script src="./js/lightbox.js"></script>
   <script type="text/javascript" src="./js/slick.min.js"></script>
 
   <script src="./js/main.js"></script>

@@ -36,10 +36,18 @@ $value in $theme-colors {
 
 @each $color,
 $value in $theme-colors {
-  .btn-outline-#{$color} {
+  .btn.btn-outline-#{$color} {
     @include button-outline-variant($value);
+    border: 2px solid $value ;
+    color: $value ;
+
+    &:hover {
+      color: color-yiq($value) ;
+    }
+
   }
 }
+
 /* --------END-OF------FUNCTION AND THEME LOOPER------------------ */
 
 /* --------START-OF------BUTTON SASS CONFIG------------------ */
@@ -92,6 +100,7 @@ $value in $theme-colors {
   }
 }
 
+
 /* --------END-OF------BUTTON SASS CONFIG------------------ */
 
 /* variables */
@@ -132,7 +141,7 @@ body {
   }
 }
 
-/* --------END-OF-------BOX STYLE------------------ */
+/* --------END-OF-------GLOBAL STYLE------------------ */
 
 
 
@@ -306,6 +315,8 @@ body {
   position: relative;
   width: 100%;
   text-align: center;
+  z-index: 0;
+
   .box__social {
     position: absolute;
     top: 50%;
@@ -314,6 +325,7 @@ body {
     opacity: 0;
     transition: .3s all;
     width: rem(280px);
+    z-index: 2;
     a {
       transition: .3s all;
     }
@@ -327,6 +339,7 @@ body {
     background-color: rgba($main-color, 0.8);
     opacity: 0;
     transition: .3s all;
+    z-index: 1;
   }
   .box__content {
     padding: em(25px) 0 em(20px);
@@ -430,9 +443,127 @@ body {
   }
 }
 
+.box--style11 {
+  position: relative;
+
+  .bg-overlay {
+    opacity: 0;
+    transition: .3s opacity;
+
+  }
+
+  .box__content {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    z-index: 1;
+    opacity: 0;
+    transition: .3s opacity ;
+
+    h3 {
+      color: $main-color;
+    }
+
+    p {
+      color: $dots-color;
+    }
+
+    &::after {
+      content : "\f002";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: $white;
+    }
+  }
+
+  .box__image {
+    position: relative;
+  }
+
+  a.refer {
+    position: relative;
+    display: block; /* full container link */
+
+    &:hover {
+      .bg-overlay {
+        opacity: 1;
+        transition: .3s opacity;
+      }
+
+      .box__content {
+        opacity: 1;
+        transition: .3s opacity ;
+      }
+    }
+  }
+}
+
 /* --------END-OF-------BOX STYLE------------------ */
 
 /* --------START-OF-------SECTION STYLE------------------ */
+
+.hero {
+  position: relative;
+  text-align: center;
+  height: auto;
+  color: $white;
+  background-image: url(../images/background/hero.jpg);
+  background-size: cover;
+  z-index: 0;
+
+  h3 {
+    font-size: rem(20px);
+    color: inherit;
+  }
+
+  p {
+    color: inherit;
+  }
+
+  .box__content {
+    margin-bottom: rem(20px);
+  }
+
+  .box__image {
+    margin-bottom: rem(30px);
+  }
+
+  .box {
+    margin-top: rem(70px);
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+    margin:  15px;
+  }
+
+  .group-btn {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include media-breakpoint-up(sm) {
+    height: rem(350px);
+
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: rem(520px);
+    background-attachment: fixed;
+
+    .box {
+      margin-top: rem(110px);
+    }
+
+    h3  {
+      font-size: rem(30px);
+    }
+
+    .box__content {
+      margin-bottom: rem(40px);
+    }
+  }
+}
+
 
 .process {
   counter-reset: count;
@@ -462,8 +593,8 @@ body {
   p {
     line-height: initial;
   }
-  @include media-breakpoint-up(md) {
-    height: auto;
+  @include media-breakpoint-up(lg) {
+    height: rem(500px);
     .slider-container {
       margin-top: rem(80px);
       background: $gradient--style;
@@ -478,7 +609,7 @@ body {
     }
     .bg-slider {
       img {
-        height: auto;
+        height: 100%;
       }
     }
   }
@@ -501,10 +632,48 @@ body {
 
 .success {
   text-align: center;
+
+  .box {
+    position: relative;
+  }
+
+
 }
 
 .team {
   text-align: center;
+}
+
+.cta {
+  z-index: 0;
+  position: relative;
+  background-image: url(../images/cta/01.jpg);
+  background-size: cover;
+  background-position: center;
+  height: rem(250px);
+
+  .box--style07 {
+    z-index: 2;
+    position: relative;
+    margin-top: rem(70px);
+  }
+  a.btn {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-attachment: fixed;
+    height: rem(350px);
+
+    .box--style07 {
+      margin-top: rem(120px);
+    }
+
+    a.btn {
+      margin-top: rem(20px);
+    }
+  }
 }
 
 .news {
@@ -536,6 +705,17 @@ body {
 /* --------END-OF-------SECTION STYLE------------------ */
 
 /* --------START-OF--------MISC STYLE------------------ */
+
+.bg-overlay {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background: rgba($black, 0.6);
+}
 
 .slider-container {
   background-color: $light-bg;
@@ -611,6 +791,18 @@ section .main-title {
   }
 }
 
+.group-btn {
+  a.btn {
+    margin: 10px;
+  }
+
+  @include media-breakpoint-up(md) {
+    a.btn {
+      margin: 0 rem(10px);
+    }
+  }
+}
+
 .box__date {
   display: inline-block;
   color: $white;
@@ -632,11 +824,11 @@ section .main-title {
   li {
     display: inline-block;
     margin: 0 12px;
-    transition: .5s all;
+    transition: .5s scale;
     &:hover {
       // font-size: 1.5rem;
       transform: scale(1.5);
-      transition: .3s all;
+      transition: .3s scale;
       a {
         color: $primary !important;
         }
